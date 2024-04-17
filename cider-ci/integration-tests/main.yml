@@ -51,7 +51,6 @@ task_defaults:
     LEIHS_ADMIN_HTTP_BASE_URL: http://localhost:{{LEIHS_ADMIN_HTTP_PORT}}
     LEIHS_DATABASE_DIR: '{{LEIHS_ROOT_DIR}}/database'
     LEIHS_DATABASE_URL: 'jdbc:postgresql://localhost/{{LEIHS_DATABASE_NAME}}?max-pool-size=5'
-    LEIHS_DEPLOY_NEW_BORROW_APP: 'yes'
     LEIHS_BORROW_DIR: '{{LEIHS_ROOT_DIR}}/borrow'
     LEIHS_BORROW_HTTP_BASE_URL: http://localhost:{{LEIHS_BORROW_HTTP_PORT}}
     LEIHS_HTTP_BASE_URL: 'http://localhost:{{LEIHS_HTTP_PORT}}'
@@ -72,7 +71,7 @@ task_defaults:
 
   templates:
     shared reverse proxy config:
-      src: deploy/roles/start-reverse-proxy/templates/shared.conf
+      src: deploy/roles/reverse-proxy-leihs/templates/main.conf
       dest: integration-tests/reverse-proxy/conf/shared.conf
 
   scripts:
@@ -127,7 +126,7 @@ task_defaults:
       body: './dev/releasenotes-md-to-yaml.rb && head -100 config/releases.yml'
     test:
       start_when:
-        config is prepared: 
+        config is prepared:
           script_key: 'prepare-config'
 
   include:
@@ -167,7 +166,7 @@ task_defaults:
 
 
 tasks:
-  include: 
+  include:
   - path: cider-ci/generators/feature-tasks.yml
     submodule: [integration-tests]
 

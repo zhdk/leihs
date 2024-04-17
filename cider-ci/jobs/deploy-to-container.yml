@@ -25,18 +25,17 @@ jobs:
         ubuntu-2204:
           name: Ubuntu 22.04 (jammy) LTS
           include: cider-ci/task-components/container-deploy/task-ubuntu-2204.yml
-          environment_variables:
-            DEPLOY_NEW_BORROW: 'true'
 
         ubuntu-2004:
           name: Ubuntu 20.04 (focal) LTS
           include: cider-ci/task-components/container-deploy/task-ubuntu-2004.yml
-          environment_variables:
-            DEPLOY_NEW_BORROW: 'true'
 
         debian-bullseye:
           name: Debian 11 (bullseye)
           include: cider-ci/task-components/container-deploy/task-debian-11.yml
-          environment_variables:
-            DEPLOY_NEW_BORROW: 'true'
+
+        debian-bookworm:
+          name: Debian 12 (bookworm)
+          include: cider-ci/task-components/container-deploy/task-debian-12.yml
+
 

@@ -1,0 +1,5 @@
+# name: Debian 12 (bookworm)
+environment_variables:
+  LXC_BASE_IMAGE: "images:debian/bookworm/amd64"
+  EXTRA_ANSIBLE_VARS_JSON: '{"ansible_python_interpreter":"/usr/bin/python3"}'
+include: [{ path: container-test/cider-ci/context.yml, submodule: [deploy] }]

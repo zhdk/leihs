@@ -13,6 +13,8 @@ include:
     submodule: [zhdk-inventory]
   - path: cider-ci/jobs/deploy-to-zhdk-leihs-test-with-restore.yml
     submodule: [zhdk-inventory]
-  - path: cider-ci/jobs/deploy-to-zhdk-dev-servers.yml
+  - path: cider-ci/jobs/deploy-to-zhdk-test.yml
+    submodule: [zhdk-inventory]
+  - path: cider-ci/jobs/deploy-to-dev.yml
     submodule: [zhdk-inventory]
 
