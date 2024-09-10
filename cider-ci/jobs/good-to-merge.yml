@@ -40,6 +40,11 @@ jobs:
         job_key: merged-to-master
         submodule: ['my']
         states: [passed]
+      inventory merged to master:
+        type: job
+        job_key: merged-to-master
+        submodule: ['inventory']
+        states: [passed]
       borrow merged to master:
         type: job
         job_key: merged-to-master
